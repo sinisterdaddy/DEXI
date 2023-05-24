@@ -14,4 +14,4 @@ Our cutting-edge technology offers a seamless user experience, allowing employee
 
 In addition, Dexi's advanced security features, including RFID and two-factor authentication, ensure that all data is protected and secured at all times, guaranteeing the highest level of privacy and data protection.
 
-At Dexi, we believe that the possibilities of artificial intelligence are limitless. We aim to continuously improve and develop our technology, making it smarter, more efficient, and more accessible to businesses of all sizes. With Dexi, the future of intelligent chatbots is here, and we are committed to revolutionizing the way businesses operate in the 21st century. 
+At Dexi, we believe that the possibilities of artificial intelligence are limitless. We aim to continuously improve and develop our technology, making it smarter, more efficient, and more accessible to businesses of all sizes. With Dexi, the future of intelligent chatbots is here, and we are committed to revolutionizing the way businesses operate in the 21st century.  
