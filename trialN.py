@@ -42,6 +42,8 @@ engine.setProperty('rate', 235)
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
+cal = 0 # Current Authentication Level
+
 # def speak(text):
 # voice = 'en-US-SteffanNeural'
 # data = f'edge-tts --voice "{voice}" --text "{text}" --write-media data.mp3'
@@ -366,6 +368,17 @@ def guide(str):
     print(res)
     speak(res)
 
+def authCheck(u, p):
+    df = pd.read_csv("empAuth.csv")
+    for i in df.itertuples():
+        if i[1]==u and i[3]==p:
+            ol=i[4]
+            return ol
+        else:
+            ol=0
+            return ol
+    
+
 
 def startup():
     speak("Initializing Dexi")
@@ -384,6 +397,15 @@ def startup():
         speak("Good afternoon")
     else:
         speak("Good evening")
+    
+    speak("Please enter your Employee ID and Password: ")
+    usr = int(input("Enter Employee ID: "))
+    pwd = input("Enter Password: ")
+    authLVL = authCheck(usr, pwd)
+    cal = authLVL
+    if authLVL==0:
+        speak("Sorry, I do not recognise you, are you sure you put in the correct credentials?")
+
     speak("I am Dexi. Online and ready sir. Please tell me how may I help you")
 
 def wkp():
@@ -417,20 +439,24 @@ class MainThread(QThread):
                 date()
 
             elif 'message' in query:
-                user_name = {
-                    'Dexi': '+91 93580 84318'
-                }
-                try:
-                    speak("To whom do you want me to text for you?")
-                    name = takeMIC()
-                    pno = user_name[name]
-                    speak("What should I text?")
-                    msg = takeMIC()
-                    sendWAPPmsg(pno, msg)
-                    speak("The message is sent!")
-                except Exception as e:
-                    print(e)
-                    speak("Sorry, I was unable to send the text.")
+                if cal == 1:
+                    user_name = {
+                        'Dexi': '+91 93580 84318'
+                        }
+                    try:
+                        speak("To whom do you want me to text for you?")
+                        name = takeMIC()
+                        pno = user_name[name]
+                        speak("What should I text?")
+                        msg = takeMIC()
+                        sendWAPPmsg(pno, msg)
+                        speak("The message is sent!")
+                    except Exception as e:
+                        print(e)
+                        speak("Sorry, I was unable to send the text.")
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
 
             elif 'wikipedia' in query:
                 speak("Working on it.")
@@ -484,23 +510,43 @@ class MainThread(QThread):
                 t2s()
 
             elif 'open notepad' in query:
-                open_notepad()
+                if cal == 1:
+                    open_notepad()
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
 
             elif 'open cmd' in query:
-                open_cmd()
+                if cal == 1:
+                    open_cmd()
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
 
             # elif 'open code' in query:
             #     pth = 'C:\Users\krish\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code'
             #     os.startfile(pth)
 
             elif 'open files' in query:
-                os.system('explorer C://')
+                if cal == 1:
+                    os.system('explorer C://')
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
 
             elif 'open camera' in query:
-                open_camera()
+                if cal == 1:
+                    open_camera()
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
 
             elif 'open calculator' in query:
-                open_calculator()
+                if cal == 1:
+                    open_calculator()
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
 
             elif 'joke' in query:
                 speak(pyjokes.get_joke())
@@ -530,34 +576,68 @@ class MainThread(QThread):
                 gpt(query)
 
             elif 'all on' in query:
-                speak('okay sir turning ON')
-                ser.write(b'A')
+                if cal == 1:
+                    speak('okay sir turning ON')
+                    ser.write(b'A')
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
+
             elif 'all of' in query:
-                speak('okay sir turning Off')
-                ser.write(b'a')
+                if cal == 1:
+                    speak('okay sir turning Off')
+                    ser.write(b'a')
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
                 
             elif 'bulb on' in query:
-                speak('okay sir the bulb turning ON')
-                ser.write(b'W')
+                if cal == 1:
+                    speak('okay sir the bulb turning ON')
+                    ser.write(b'W')
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
+
             elif 'bulb of' in query:
-                speak('okay sir turning the bulb Off')
-                ser.write(b'Q')
+                if cal == 1:
+                    speak('okay sir turning the bulb Off')
+                    ser.write(b'Q')
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
                 
             elif 'light on' in query:
-                speak('okay sir turning the light ON')
-                ser.write(b'R')
+                if cal == 1:
+                    speak('okay sir turning the light ON')
+                    ser.write(b'R')
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
+
             elif 'light of' in query:
-                speak('okay sir turning the light Off')
-                ser.write(b'E') 
+                if cal == 1:
+                    speak('okay sir turning the light Off')
+                    ser.write(b'E')
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!") 
                 
             elif 'fan on' in query:
-                speak('okay sir turning the fan ON')
-                ser.write(b'Y')
+                if cal == 1:
+                    speak('okay sir turning the fan ON')
+                    ser.write(b'Y')
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!")
+
             elif 'fan of' in query:
-                speak('okay sir turning the fan Off')
-                ser.write(b'T') 
-                
-        
+                if cal == 1:
+                    speak('okay sir turning the fan Off')
+                    ser.write(b'T')
+                else:
+                    speak("Sorry, you do not have clearance for this action!")
+                    print("Sorry, you do not have clearance for this action!") 
 
             elif 'offline' or 'sleep' or 'bye'  or 'exit' in query:
                 speak("Alright! Have a good one, buh byee!")
