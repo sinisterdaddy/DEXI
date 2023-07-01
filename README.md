@@ -20,4 +20,3 @@ User Hierarchical Function Clearance: Dexi offers a user hierarchical-based func
 At Dexi, we believe that the possibilities of artificial intelligence are limitless. We aim to continuously improve and develop our technology, making it smarter, more efficient, and more accessible to businesses of all sizes. With Dexi, the future of intelligent chatbots is here, and we are committed to revolutionizing the way businesses operate in the 21st century.  
 
 YOUTUBE LINK:- https://youtu.be/kt-r1Fmwpc8
-DEMO:- https://youtu.be/rtNdzV3uDzw
