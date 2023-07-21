@@ -1,5 +1,5 @@
 # DEXI
-<h2>A State-of-the-Art Automation Solution</h2>
+<h2>A State-of-the-Art Automation Solution</h2> 
 Introducing "Dexi" - the sleek and sophisticated chatbot that is taking the world by storm with its incredible combination of home automation and AI technology.
 
 Powered by the latest IoT technology, Dexi is the ultimate smart home assistant that can easily handle all your offline and online operations. With advanced voice automation and a stunning graphical user interface, controlling your lights, fans, and other home appliances has never been easier or more intuitive.
