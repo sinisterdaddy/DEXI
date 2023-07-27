@@ -4,7 +4,7 @@ Introducing "Dexi" - the sleek and sophisticated chatbot that is taking the worl
 
 Powered by the latest IoT technology, Dexi is the ultimate smart home assistant that can easily handle all your offline and online operations. With advanced voice automation and a stunning graphical user interface, controlling your lights, fans, and other home appliances has never been easier or more intuitive.
 
-And with the added convenience of Telegram integration, you can manage your connected home devices from anywhere, at any time, with just a few taps on your smartphone. Plus, the ChatGP integration makes interacting with Dexi a breeze, giving you the power to control your home automation with your voice or a simple click.
+And with the added convenience of Telegram integration, you can manage your connected home devices from anywhere, at any time, with just a few taps on your smartphone. Plus, the ChatGP integration makes interacting with Dexi a breeze, giving you the power to control your home automation with your voice or a simple click. 
 
 But that's not all - DexAi is also the perfect companion for university students, with an innovative helpdesk feature that allows you to quickly get information about any faculty in the university or navigate important locations within the campus.
 
